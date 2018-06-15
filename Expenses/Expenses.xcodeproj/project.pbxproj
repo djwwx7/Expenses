@@ -15,6 +15,8 @@
 		EF4AA14D20CB7A16004878B3 /* ExpensesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4AA14C20CB7A16004878B3 /* ExpensesTests.swift */; };
 		EF4AA15820CB7A16004878B3 /* ExpensesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4AA15720CB7A16004878B3 /* ExpensesUITests.swift */; };
 		EF4AA16620CB7C24004878B3 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4AA16520CB7C24004878B3 /* ExpensesViewController.swift */; };
+		EFA6E9E520D42CF500F00059 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6E9E420D42CF500F00059 /* Expenses.swift */; };
+		EFA6E9E920D43EEC00F00059 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6E9E820D43EEC00F00059 /* ExpenseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		EF4AA15720CB7A16004878B3 /* ExpensesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesUITests.swift; sourceTree = "<group>"; };
 		EF4AA15920CB7A16004878B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4AA16520CB7C24004878B3 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		EFA6E9E420D42CF500F00059 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		EFA6E9E820D43EEC00F00059 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				EF4AA14320CB7A16004878B3 /* Info.plist */,
 				EF4AA13B20CB7A15004878B3 /* Expenses.xcdatamodeld */,
 				EF4AA16520CB7C24004878B3 /* ExpensesViewController.swift */,
+				EFA6E9E420D42CF500F00059 /* Expenses.swift */,
+				EFA6E9E820D43EEC00F00059 /* ExpenseTableViewCell.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA6E9E920D43EEC00F00059 /* ExpenseTableViewCell.swift in Sources */,
+				EFA6E9E520D42CF500F00059 /* Expenses.swift in Sources */,
 				EF4AA13D20CB7A15004878B3 /* Expenses.xcdatamodeld in Sources */,
 				EF4AA13520CB7A15004878B3 /* AppDelegate.swift in Sources */,
 				EF4AA16620CB7C24004878B3 /* ExpensesViewController.swift in Sources */,

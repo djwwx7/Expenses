@@ -9,20 +9,31 @@
 import UIKit
 
 class ExpensesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    struct Expenses {
-        var title : String
-        var amount : Double
-        var date : String
-    }
     
-    var theExpenses = [Expenses(title: "Dinner", amount: 32.50, date: "June 1, 2018 12:17"),
-                       Expenses(title: "Office Supplies", amount: 59.34, date: "May 30, 2018, 12:17"),
-                       Expenses(title: "Uber", amount: 16.23, date: "May 30, 2018 11:43"),
-                       Expenses(title: "Coffee", amount: 3.95, date: "May 29, 2018 8:45")]
+    var theExpenses = [Expenses]()
+    
+    var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
+        
+        if let date = dateFormatter.date(from: "June 1st, 2018 18:30"){
+            theExpenses.append(Expenses(title: "Dinner", amount: 32.50, date: date))
+        }
+        
+        if let date = dateFormatter.date(from: "May 30th, 2018 12:17"){
+            theExpenses.append(Expenses(title: "Office Supplies", amount: 59.34, date: date))
+        }
+        
+        if let date = dateFormatter.date(from: "May 30th, 2018 11:43"){
+            theExpenses.append(Expenses(title: "Uber", amount: 16.23, date: date))
+        }
+        
+        if let date = dateFormatter.date(from: "May 29th, 2018 8:45"){
+            theExpenses.append(Expenses(title: "Coffee", amount: 3.95, date: date))
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -33,7 +44,7 @@ class ExpensesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,9 +54,14 @@ class ExpensesViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath)
         
-        cell.textLabel?.text = theExpenses[indexPath.row].title
-        cell.textLabel?.text = theExpenses[indexPath.row].amount
-        cell.textLabel?.text = theExpenses[indexPath.row].date
+        if let cell = cell as? ExpenseTableViewCell {
+            
+            let expense = theExpenses[indexPath.row]
+        
+            cell.titleLabel?.text = expense.title
+            cell.amountLabel?.text = String(expense.amount)
+            cell.dateLabel?.text = dateFormatter.string(from: expense.date)
+        }
         
         return cell
     }
